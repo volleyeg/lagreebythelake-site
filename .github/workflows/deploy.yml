@@ -21,5 +21,6 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           port: ${{ secrets.FTP_PORT }}
           local_path: './*'
-          remote_path: '/public_html/lagreebythelake'
+          remote_path: '/public_html/'
           sftp_only: true
+          args: '-o ConnectTimeout=5'
