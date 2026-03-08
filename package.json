@@ -1,0 +1,14 @@
+{
+  "name": "lagreebythelake-site",
+  "version": "1.0.0",
+  "description": "Lagree by the Lake website",
+  "scripts": {
+    "push":   "git add -A && git commit -m \"update site\" && git push origin main",
+    "save":   "git add -A && git commit -m \"update site\" && git push origin main",
+    "msg":    "git add -A && git commit -m",
+    "status": "git status",
+    "log":    "git log --oneline -10",
+    "dev":    "npx live-server --port=3000 --open=index.html",
+    "preview":"npx live-server --port=3000 --open=index.html"
+  }
+}
