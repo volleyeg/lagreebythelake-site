@@ -1,0 +1,34 @@
+/* ─────────────────────────────────────────────
+   LAGREE BY THE LAKE — BRAND COLOURS
+   Single source of truth for all colour tokens.
+   ───────────────────────────────────────────── */
+
+:root {
+  /* ── Dark backgrounds (based on brand #37593f) ── */
+  --forest:       #1e3324;   /* deepest bg / footer */
+  --deep:         #2b4532;   /* page bg / hero */
+  --mid:          #37593f;   /* card / panel bg — exact brand green */
+  --panel:        #426849;   /* elevated panel */
+
+  /* ── Brand accent (based on brand #92bda7) ── */
+  --teal:         #92bda7;   /* primary accent — exact brand sage */
+  --teal-dim:     #7aab93;   /* muted / dividers */
+
+  /* ── Light background (exact brand #fbf6f3) ── */
+  --light-bg:     #fbf6f3;
+
+  /* ── Text ── */
+  --white:        #fbf6f3;   /* near-white heading text — brand off-white */
+  --cream:        #f0ebe5;   /* body text on dark */
+  --warm:         #c9bfb9;   /* secondary text on dark */
+  --muted:        #ab9e97;   /* subtle / footer meta — exact brand taupe */
+
+  /* ── Text on light background ── */
+  --light-heading: #37593f;              /* brand forest green on light bg */
+  --light-body:    #5a504d;              /* warm dark body copy */
+  --light-accent:  #92bda7;             /* sage accent on light bg */
+  --light-accent-dim: rgba(146,189,167,0.4); /* dividers on light bg */
+
+  /* ── Highlight ── */
+  --gold:         #c9a96e;   /* notice / highlight colour */
+}
