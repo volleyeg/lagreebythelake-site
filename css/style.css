@@ -108,11 +108,11 @@ nav {
     flex-direction: column;
     position: fixed;
     top: 68px; left: 0; right: 0;
-    background: rgba(11,24,18,0.98);
+    background: var(--forest);
     padding: 2rem;
     gap: 1.5rem;
     align-items: flex-start;
-    border-bottom: 1px solid rgba(109,191,176,0.15);
+    border-bottom: 1px solid rgba(146,189,167,0.15);
   }
   .nav-toggle { display: flex; }
   .nav-book { display: none !important; }
