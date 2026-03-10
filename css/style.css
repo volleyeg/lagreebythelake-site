@@ -2,17 +2,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
 
 :root {
-  --forest:   #0b1812;
-  --deep:     #111f17;
-  --mid:      #1a2e22;
-  --panel:    #1f3529;
-  --teal:     #6dbfb0;
-  --teal-dim: #4a9d8f;
-  --cream:    #f0e8d8;
-  --warm:     #c8bfa8;
-  --muted:    #7a8c80;
-  --gold:     #c9a96e;
-  --white:    #faf7f2;
+  /* ── Dark backgrounds (based on brand #37593f) ── */
+  --forest:       #1e3324;
+  --deep:         #2b4532;
+  --mid:          #37593f;
+  --panel:        #426849;
+
+  /* ── Brand accent (based on brand #92bda7) ── */
+  --teal:         #92bda7;
+  --teal-dim:     #7aab93;
+
+  /* ── Light background (exact brand #fbf6f3) ── */
+  --light-bg:     #fbf6f3;
+
+  /* ── Text ── */
+  --white:        #fbf6f3;
+  --cream:        #f0ebe5;
+  --warm:         #c9bfb9;
+  --muted:        #ab9e97;
+
+  /* ── Text on light background ── */
+  --light-heading: #37593f;
+  --light-body:    #5a504d;
+  --light-accent:  #92bda7;
+  --light-accent-dim: rgba(146,189,167,0.4);
+
+  /* ── Highlight ── */
+  --gold:         #c9a96e;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
