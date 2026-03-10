@@ -1,1263 +1,171 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lagree by the Lake — Muskoka's Only Lagree Fitness Studio</title>
-  <meta name="description" content="High-intensity, low-impact Lagree fitness in the heart of Muskoka. Where high-intensity fitness meets country vibes. Grand opening 2026." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <meta name="description" content="Lagree by the Lake is Muskoka's only Lagree fitness studio. High-intensity, low-impact 50-minute full-body workouts in Windermere, ON. Grand opening Summer 2026." />
+  <link rel="canonical" href="https://lagreebythelake.com/" />
+  <link rel="stylesheet" href="css/style.css" />
   <style>
-    :root {
-      --forest:   #0b1812;
-      --deep:     #111f17;
-      --mid:      #1a2e22;
-      --panel:    #1f3529;
-      --teal:     #6dbfb0;
-      --teal-dim: #4a9d8f;
-      --cream:    #f0e8d8;
-      --warm:     #c8bfa8;
-      --muted:    #7a8c80;
-      --gold:     #c9a96e;
-      --white:    #faf7f2;
-    }
-
-```
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-html { scroll-behavior: smooth; }
-
-body {
-  background: var(--forest);
-  color: var(--cream);
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 300;
-  line-height: 1.7;
-  overflow-x: hidden;
-}
-
-/* ─── NOISE TEXTURE OVERLAY ─── */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 999;
-  opacity: 0.4;
-}
-
-/* ─── NAV ─── */
-nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  padding: 0 2rem;
-  height: 68px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: linear-gradient(to bottom, rgba(11,24,18,0.98) 0%, rgba(11,24,18,0.0) 100%);
-  transition: background 0.4s;
-}
-
-nav.scrolled {
-  background: rgba(11,24,18,0.97);
-  border-bottom: 1px solid rgba(109,191,176,0.12);
-}
-
-.nav-logo {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.25rem;
-  font-weight: 400;
-  color: var(--cream);
-  text-decoration: none;
-  letter-spacing: 0.04em;
-}
-
-.nav-logo span { color: var(--teal); }
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  list-style: none;
-}
-
-.nav-links a {
-  color: var(--warm);
-  text-decoration: none;
-  font-size: 0.78rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  transition: color 0.2s;
-}
-
-.nav-links a:hover { color: var(--teal); }
-
-.nav-book {
-  background: var(--teal);
-  color: var(--forest) !important;
-  padding: 0.5rem 1.2rem;
-  border-radius: 2px;
-  font-weight: 500 !important;
-  transition: background 0.2s !important;
-}
-
-.nav-book:hover { background: var(--cream) !important; color: var(--forest) !important; }
-
-/* hamburger */
-.nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
-.nav-toggle span { width: 24px; height: 1.5px; background: var(--cream); transition: 0.3s; }
-
-@media (max-width: 768px) {
-  .nav-links { display: none; }
-  .nav-links.open {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 68px; left: 0; right: 0;
-    background: rgba(11,24,18,0.98);
-    padding: 2rem;
-    gap: 1.5rem;
-    align-items: flex-start;
-    border-bottom: 1px solid rgba(109,191,176,0.15);
-  }
-  .nav-toggle { display: flex; }
-  .nav-book { display: none !important; }
-}
-
-/* ─── HERO ─── */
-#home {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  padding: 6rem 2rem 4rem;
-}
-
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 80% 60% at 50% 30%, rgba(109,191,176,0.08) 0%, transparent 70%),
-    radial-gradient(ellipse 50% 40% at 20% 80%, rgba(201,169,110,0.06) 0%, transparent 60%),
-    linear-gradient(180deg, var(--forest) 0%, var(--deep) 100%);
-}
-
-/* decorative horizontal line */
-.hero-bg::after {
-  content: '';
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  width: 600px; height: 600px;
-  border: 1px solid rgba(109,191,176,0.06);
-  border-radius: 50%;
-}
-
-.hero-content { position: relative; z-index: 2; max-width: 800px; }
-
-.hero-eyebrow {
-  display: inline-block;
-  font-size: 0.72rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--teal);
-  margin-bottom: 1.5rem;
-  opacity: 0;
-  animation: fadeUp 0.8s 0.3s forwards;
-}
-
-.hero-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(3.2rem, 8vw, 6.5rem);
-  font-weight: 300;
-  line-height: 1.05;
-  color: var(--white);
-  margin-bottom: 0.3em;
-  opacity: 0;
-  animation: fadeUp 0.8s 0.5s forwards;
-}
-
-.hero-title em {
-  font-style: italic;
-  color: var(--teal);
-}
-
-.hero-sub {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-  font-weight: 300;
-  font-style: italic;
-  color: var(--warm);
-  margin-bottom: 2.5rem;
-  opacity: 0;
-  animation: fadeUp 0.8s 0.7s forwards;
-}
-
-.hero-notice {
-  display: inline-block;
-  font-size: 0.8rem;
-  letter-spacing: 0.08em;
-  color: var(--gold);
-  border: 1px solid rgba(201,169,110,0.3);
-  padding: 0.5rem 1.2rem;
-  border-radius: 2px;
-  margin-bottom: 2.5rem;
-  opacity: 0;
-  animation: fadeUp 0.8s 0.8s forwards;
-}
-
-.hero-cta {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  opacity: 0;
-  animation: fadeUp 0.8s 0.9s forwards;
-}
-
-.btn-primary {
-  background: var(--teal);
-  color: var(--forest);
-  padding: 0.9rem 2.2rem;
-  font-size: 0.8rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  text-decoration: none;
-  border-radius: 2px;
-  transition: all 0.25s;
-  border: none;
-  cursor: pointer;
-}
-
-.btn-primary:hover { background: var(--white); transform: translateY(-2px); }
-
-.btn-outline {
-  border: 1px solid rgba(240,232,216,0.3);
-  color: var(--cream);
-  padding: 0.9rem 2.2rem;
-  font-size: 0.8rem;
-  font-weight: 400;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  text-decoration: none;
-  border-radius: 2px;
-  transition: all 0.25s;
-}
-
-.btn-outline:hover { border-color: var(--teal); color: var(--teal); }
-
-.hero-scroll {
-  position: absolute;
-  bottom: 2.5rem; left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  opacity: 0;
-  animation: fadeIn 1s 1.5s forwards;
-}
-
-.hero-scroll span {
-  font-size: 0.65rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
-.scroll-line {
-  width: 1px;
-  height: 40px;
-  background: linear-gradient(to bottom, var(--teal-dim), transparent);
-  animation: scrollPulse 2s infinite;
-}
-
-/* ─── SECTION BASE ─── */
-section { padding: 6rem 2rem; }
-
-.container { max-width: 1100px; margin: 0 auto; }
-
-.section-label {
-  font-size: 0.7rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--teal);
-  margin-bottom: 1rem;
-  display: block;
-}
-
-.section-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.2rem, 5vw, 3.8rem);
-  font-weight: 300;
-  line-height: 1.1;
-  color: var(--white);
-  margin-bottom: 1.5rem;
-}
-
-.section-title em { font-style: italic; color: var(--teal); }
-
-.divider {
-  width: 40px;
-  height: 1px;
-  background: var(--teal-dim);
-  margin-bottom: 2rem;
-}
-
-/* ─── ABOUT ─── */
-#about { background: var(--deep); }
-
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5rem;
-  align-items: center;
-}
-
-.about-text p {
-  color: var(--warm);
-  margin-bottom: 1.2rem;
-  font-size: 0.95rem;
-}
-
-.about-stats {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-  margin-top: 2.5rem;
-}
-
-.stat {
-  border-left: 2px solid var(--teal-dim);
-  padding-left: 1rem;
-}
-
-.stat-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2.5rem;
-  font-weight: 300;
-  color: var(--white);
-  line-height: 1;
-}
-
-.stat-label {
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-top: 0.3rem;
-}
-
-.about-visual {
-  position: relative;
-}
-
-.about-card {
-  background: var(--mid);
-  border: 1px solid rgba(109,191,176,0.12);
-  border-radius: 4px;
-  padding: 2.5rem;
-  position: relative;
-  overflow: hidden;
-}
-
-.about-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 2px;
-  background: linear-gradient(to right, var(--teal), transparent);
-}
-
-.about-card-quote {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.6rem;
-  font-style: italic;
-  font-weight: 300;
-  color: var(--cream);
-  line-height: 1.4;
-  margin-bottom: 1.5rem;
-}
-
-.about-card-body {
-  color: var(--warm);
-  font-size: 0.9rem;
-  line-height: 1.8;
-}
-
-@media (max-width: 768px) {
-  .about-grid { grid-template-columns: 1fr; gap: 3rem; }
-}
-
-/* ─── FIRST TIMERS ─── */
-#firsttimers { background: var(--forest); }
-
-.timers-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-top: 3rem;
-}
-
-.timer-card {
-  background: var(--mid);
-  border: 1px solid rgba(109,191,176,0.1);
-  border-radius: 4px;
-  padding: 2rem;
-  transition: border-color 0.3s, transform 0.3s;
-}
-
-.timer-card:hover {
-  border-color: rgba(109,191,176,0.35);
-  transform: translateY(-4px);
-}
-
-.timer-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 3rem;
-  font-weight: 300;
-  color: rgba(109,191,176,0.25);
-  line-height: 1;
-  margin-bottom: 1rem;
-}
-
-.timer-title {
-  font-size: 0.85rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--cream);
-  margin-bottom: 0.8rem;
-}
-
-.timer-body {
-  font-size: 0.88rem;
-  color: var(--warm);
-  line-height: 1.7;
-}
-
-@media (max-width: 768px) {
-  .timers-grid { grid-template-columns: 1fr; }
-}
-
-/* ─── SCHEDULE ─── */
-#scheduling { background: var(--deep); }
-
-.schedule-inner {
-  background: var(--mid);
-  border: 1px solid rgba(109,191,176,0.12);
-  border-radius: 4px;
-  padding: 3rem;
-  margin-top: 2rem;
-  min-height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.schedule-placeholder p {
-  color: var(--muted);
-  font-size: 0.9rem;
-  margin-top: 1rem;
-}
-
-.schedule-placeholder .placeholder-icon {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 3rem;
-  color: rgba(109,191,176,0.2);
-}
-
-/* ─── FAQ ─── */
-#faq { background: var(--forest); }
-
-.faq-list { margin-top: 3rem; }
-
-.faq-item {
-  border-bottom: 1px solid rgba(255,255,255,0.07);
-}
-
-.faq-question {
-  width: 100%;
-  background: none;
-  border: none;
-  color: var(--cream);
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.95rem;
-  font-weight: 400;
-  text-align: left;
-  padding: 1.4rem 0;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  transition: color 0.2s;
-}
-
-.faq-question:hover { color: var(--teal); }
-
-.faq-icon {
-  width: 20px; height: 20px;
-  border: 1px solid rgba(109,191,176,0.4);
-  border-radius: 50%;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.9rem;
-  color: var(--teal);
-  transition: transform 0.3s;
-}
-
-.faq-item.open .faq-icon { transform: rotate(45deg); }
-
-.faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease, padding 0.3s;
-}
-
-.faq-item.open .faq-answer { max-height: 300px; }
-
-.faq-answer p {
-  color: var(--warm);
-  font-size: 0.88rem;
-  line-height: 1.8;
-  padding-bottom: 1.4rem;
-}
-
-/* ─── PRICING ─── */
-#pricing { background: var(--deep); }
-
-.pricing-notice {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  background: rgba(201,169,110,0.1);
-  border: 1px solid rgba(201,169,110,0.25);
-  border-radius: 2px;
-  padding: 0.6rem 1rem;
-  font-size: 0.8rem;
-  color: var(--gold);
-  letter-spacing: 0.05em;
-  margin-bottom: 2.5rem;
-}
-
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-}
-
-.pricing-card {
-  background: var(--mid);
-  border: 1px solid rgba(109,191,176,0.12);
-  border-radius: 4px;
-  padding: 2.5rem 2rem;
-  position: relative;
-  overflow: hidden;
-  transition: border-color 0.3s;
-}
-
-.pricing-card:hover { border-color: rgba(109,191,176,0.35); }
-
-.pricing-card.featured {
-  border-color: rgba(109,191,176,0.4);
-  background: var(--panel);
-}
-
-.pricing-card.featured::before {
-  content: 'POPULAR';
-  position: absolute;
-  top: 1.2rem; right: 1.2rem;
-  font-size: 0.6rem;
-  letter-spacing: 0.2em;
-  color: var(--teal);
-  border: 1px solid rgba(109,191,176,0.3);
-  padding: 0.2rem 0.5rem;
-  border-radius: 2px;
-}
-
-.pricing-name {
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 1rem;
-}
-
-.pricing-price {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 3.5rem;
-  font-weight: 300;
-  color: var(--white);
-  line-height: 1;
-  margin-bottom: 0.3rem;
-}
-
-.pricing-price span {
-  font-size: 1.5rem;
-  vertical-align: super;
-  color: var(--warm);
-}
-
-.pricing-expiry {
-  font-size: 0.78rem;
-  color: var(--muted);
-  margin-bottom: 2rem;
-}
-
-.pricing-divider {
-  width: 100%;
-  height: 1px;
-  background: rgba(255,255,255,0.07);
-  margin-bottom: 1.5rem;
-}
-
-.pricing-coming {
-  display: inline-block;
-  font-size: 0.72rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--gold);
-  border: 1px solid rgba(201,169,110,0.2);
-  padding: 0.4rem 0.9rem;
-  border-radius: 2px;
-}
-
-@media (max-width: 768px) {
-  .pricing-grid { grid-template-columns: 1fr; }
-}
-
-/* ─── CONTACT ─── */
-#contactus { background: var(--forest); }
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5rem;
-  align-items: start;
-}
-
-.contact-info-item {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.contact-info-icon {
-  width: 36px;
-  height: 36px;
-  background: var(--mid);
-  border: 1px solid rgba(109,191,176,0.2);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  font-size: 0.85rem;
-}
-
-.contact-info-text strong {
-  display: block;
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 0.3rem;
-}
-
-.contact-info-text a,
-.contact-info-text span {
-  color: var(--cream);
-  text-decoration: none;
-  font-size: 0.9rem;
-  line-height: 1.5;
-}
-
-.contact-info-text a:hover { color: var(--teal); }
-
-.contact-form { display: flex; flex-direction: column; gap: 1rem; }
-
-.form-group { display: flex; flex-direction: column; gap: 0.4rem; }
-
-.form-group label {
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
-.form-group input,
-.form-group textarea {
-  background: var(--mid);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 2px;
-  padding: 0.85rem 1rem;
-  color: var(--cream);
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.9rem;
-  font-weight: 300;
-  outline: none;
-  transition: border-color 0.2s;
-  resize: vertical;
-}
-
-.form-group input:focus,
-.form-group textarea:focus { border-color: rgba(109,191,176,0.5); }
-
-.form-submit {
-  background: var(--teal);
-  color: var(--forest);
-  border: none;
-  padding: 0.95rem 2rem;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.8rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  cursor: pointer;
-  border-radius: 2px;
-  transition: all 0.25s;
-  align-self: flex-start;
-}
-
-.form-submit:hover { background: var(--white); transform: translateY(-2px); }
-
-@media (max-width: 768px) {
-  .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
-}
-
-/* ─── FOOTER ─── */
-footer {
-  background: var(--forest);
-  border-top: 1px solid rgba(255,255,255,0.06);
-  padding: 3rem 2rem;
-}
-
-.footer-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-}
-
-.footer-logo {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem;
-  color: var(--cream);
-  text-decoration: none;
-}
-
-.footer-logo span { color: var(--teal); }
-
-.footer-links {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
-}
-
-.footer-links a {
-  color: var(--muted);
-  text-decoration: none;
-  font-size: 0.78rem;
-  letter-spacing: 0.08em;
-  transition: color 0.2s;
-}
-
-.footer-links a:hover { color: var(--teal); }
-
-.footer-copy {
-  color: var(--muted);
-  font-size: 0.75rem;
-  width: 100%;
-  text-align: center;
-  margin-top: 1rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid rgba(255,255,255,0.05);
-}
-
-/* ─── INSTAGRAM LINK ─── */
-.social-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--muted);
-  text-decoration: none;
-  font-size: 0.8rem;
-  letter-spacing: 0.08em;
-  transition: color 0.2s;
-  margin-top: 2rem;
-}
-
-.social-link:hover { color: var(--teal); }
-
-.social-link svg { width: 16px; height: 16px; }
-
-/* ─── ANIMATIONS ─── */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-@keyframes scrollPulse {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 1; }
-}
-
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-```
-
+    #hero { min-height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; position:relative; overflow:hidden; padding:6rem 2rem 5rem; }
+    .hero-bg { position:absolute; inset:0; background: radial-gradient(ellipse 80% 55% at 50% 30%, rgba(109,191,176,0.09) 0%, transparent 70%), linear-gradient(180deg, var(--deep) 0%, var(--forest) 100%); }
+    .hero-content { position:relative; z-index:2; max-width:820px; }
+    .hero-logo { height:90px; width:auto; margin:0 auto 2rem; opacity:0; animation:fadeUp 0.8s 0.3s forwards; filter:brightness(1.1); }
+    .hero-eyebrow { display:inline-block; font-size:0.72rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--teal); margin-bottom:1.2rem; opacity:0; animation:fadeUp 0.8s 0.45s forwards; }
+    .hero-title { font-family:'Cormorant Garamond',serif; font-size:clamp(3rem,8vw,6rem); font-weight:300; line-height:1.05; color:var(--white); margin-bottom:0.3em; opacity:0; animation:fadeUp 0.8s 0.6s forwards; }
+    .hero-title em { font-style:italic; color:var(--teal); }
+    .hero-sub { font-family:'Cormorant Garamond',serif; font-size:clamp(1.1rem,2.5vw,1.45rem); font-style:italic; color:var(--warm); margin-bottom:2rem; opacity:0; animation:fadeUp 0.8s 0.75s forwards; }
+    .hero-notice { display:inline-block; font-size:0.8rem; letter-spacing:0.08em; color:var(--gold); border:1px solid rgba(201,169,110,0.3); padding:0.5rem 1.2rem; border-radius:2px; margin-bottom:2.5rem; opacity:0; animation:fadeUp 0.8s 0.85s forwards; }
+    .hero-cta { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; opacity:0; animation:fadeUp 0.8s 1s forwards; }
+    .hero-scroll { position:absolute; bottom:2.5rem; left:50%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:0.5rem; opacity:0; animation:fadeIn 1s 1.6s forwards; }
+    .hero-scroll span { font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); }
+    .scroll-line { width:1px; height:40px; background:linear-gradient(to bottom, var(--teal-dim), transparent); animation:scrollPulse 2s infinite; }
+    .intro-strip { background:var(--mid); border-top:1px solid rgba(109,191,176,0.1); border-bottom:1px solid rgba(109,191,176,0.1); padding:2.5rem 2rem; }
+    .intro-strip-inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(4,1fr); gap:2rem; text-align:center; }
+    .strip-num { font-family:'Cormorant Garamond',serif; font-size:2.2rem; font-weight:300; color:var(--teal); line-height:1; margin-bottom:0.3rem; }
+    .strip-label { font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); }
+    @media(max-width:600px){ .intro-strip-inner { grid-template-columns:repeat(2,1fr); } }
+    .home-about { padding:6rem 2rem; background:var(--deep); }
+    .home-about-grid { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; }
+    .home-about-images { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+    .home-about-images img:first-child { grid-column:1/-1; }
+    .home-about-text p { color:var(--warm); margin-bottom:1.2rem; font-size:0.95rem; }
+    .home-about-links { display:flex; gap:1rem; flex-wrap:wrap; margin-top:2rem; }
+    @media(max-width:768px){ .home-about-grid { grid-template-columns:1fr; gap:3rem; } }
+    .quick-links { padding:5rem 2rem; background:var(--forest); }
+    .quick-links-grid { max-width:1100px; margin:3rem auto 0; display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+    .quick-card { background:var(--mid); border:1px solid rgba(109,191,176,0.1); border-radius:4px; padding:2rem; text-decoration:none; transition:border-color 0.3s,transform 0.3s; display:block; }
+    .quick-card:hover { border-color:rgba(109,191,176,0.4); transform:translateY(-4px); }
+    .quick-card-label { font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--teal); margin-bottom:0.8rem; }
+    .quick-card-title { font-family:'Cormorant Garamond',serif; font-size:1.6rem; font-weight:300; color:var(--white); margin-bottom:0.8rem; }
+    .quick-card-body { font-size:0.85rem; color:var(--warm); line-height:1.7; }
+    .quick-card-arrow { margin-top:1.5rem; font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--teal); }
+    @media(max-width:768px){ .quick-links-grid { grid-template-columns:1fr; } }
+    @keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+    @keyframes fadeIn  { from{opacity:0} to{opacity:1} }
+    @keyframes scrollPulse { 0%,100%{opacity:0.4} 50%{opacity:1} }
   </style>
 </head>
 <body>
-
-<!-- TEST BOX -->
-<div style="background: red; color: white; font-size: 2rem; font-weight: bold; text-align: center; padding: 2rem; width: 100%; z-index: 9999; position: relative;">
-  🔴 THIS IS A TEST BOX 🔴
-</div>
-
-  <!-- NAV -->
-
-  <nav id="navbar">
-    <a class="nav-logo" href="#home">Lagree <span>by the Lake</span></a>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+  <nav>
+    <a class="nav-logo" href="index.html">
+      <img src="https://lagreebythelakestudio.com/wp-content/uploads/2025/07/Logo-V3.png" alt="Lagree by the Lake" />
+      <span class="nav-logo-text">Lagree <span>by the Lake</span></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#about">About</a></li>
-      <li><a href="#firsttimers">First Timers</a></li>
-      <li><a href="#scheduling">Schedule</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#pricing">Pricing</a></li>
-      <li><a href="#contactus">Contact</a></li>
-      <li><a href="#scheduling" class="nav-book">Book</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="first-timers.html">First Timers</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="schedule.html" class="nav-book">Book</a></li>
     </ul>
   </nav>
-
-  <!-- HERO -->
-
-  <section id="home">
+  <section id="hero">
     <div class="hero-bg"></div>
     <div class="hero-content">
+      <img class="hero-logo" src="https://lagreebythelakestudio.com/wp-content/uploads/2025/07/Logo-V3.png" alt="Lagree by the Lake" />
       <span class="hero-eyebrow">Muskoka's Only Lagree Fitness Studio</span>
-      <h1 class="hero-title">Lagree<br><em>by the Lake</em></h1>
+      <h1 class="hero-title">Welcome to<br>Lagree <em>by the Lake</em></h1>
       <p class="hero-sub">Where high-intensity fitness meets country vibes</p>
-      <div class="hero-notice">✦ Grand Opening — Summer 2026</div>
+      <div class="hero-notice">✦ Closed for the season — Grand Opening Summer 2026</div>
       <div class="hero-cta">
-        <a href="#scheduling" class="btn-primary">Book Your Class</a>
-        <a href="#about" class="btn-outline">Learn the Method</a>
+        <a href="schedule.html" class="btn-primary">Book Your Class</a>
+        <a href="about.html" class="btn-outline">Learn the Method</a>
       </div>
     </div>
-    <div class="hero-scroll">
-      <div class="scroll-line"></div>
-      <span>Scroll</span>
-    </div>
+    <div class="hero-scroll"><div class="scroll-line"></div><span>Scroll</span></div>
   </section>
-
-  <!-- ABOUT -->
-
-  <section id="about">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-text reveal">
-          <span class="section-label">The Method</span>
-          <h2 class="section-title">It's not Pilates…<br>it's <em>Lagree</em></h2>
-          <div class="divider"></div>
-          <p>Lagree by the Lake is a 50-minute full-body workout that focuses on muscular endurance, strength, and flexibility. It strengthens, tightens, and sculpts through slow and controlled movements — tough on muscles, gentle on joints.</p>
-          <p>Imagine the best parts of strength training, cardio, and Pilates combined in one workout. That's the Lagree Method.</p>
-          <p>Classes are conducted on the Miniformer Pro — one of Lagree Fitness' latest machines. Don't let the size fool you; it packs a mega punch.</p>
-          <p style="color: var(--cream); font-style: italic;">Prepare to shake, sweat, and feel the burn the following day.</p>
-          <a href="https://www.instagram.com/lagreebythelake_/" target="_blank" class="social-link">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-              <circle cx="12" cy="12" r="4"/>
-              <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
-            </svg>
-            @lagreebythelake_
-          </a>
-          <div class="about-stats">
-            <div class="stat">
-              <div class="stat-num">50</div>
-              <div class="stat-label">Minutes per class</div>
-            </div>
-            <div class="stat">
-              <div class="stat-num">1</div>
-              <div class="stat-label">Machine. Total body.</div>
-            </div>
-            <div class="stat">
-              <div class="stat-num">All</div>
-              <div class="stat-label">Fitness levels welcome</div>
-            </div>
-            <div class="stat">
-              <div class="stat-num">Zero</div>
-              <div class="stat-label">Joint impact</div>
-            </div>
-          </div>
-        </div>
-        <div class="about-visual reveal">
-          <div class="about-card">
-            <p class="about-card-quote">"The best parts of strength training, cardio, and Pilates — in one workout."</p>
-            <p class="about-card-body">While Lagree uses a machine with springs (similar to Reformer Pilates), the method incorporates strength training moves and body-building principles. We focus on slow, controlled movements and progressive load to build strength.</p>
-            <br>
-            <p class="about-card-body">Trust us — if you like Pilates, you're going to love Lagree.</p>
-          </div>
-        </div>
-      </div>
+  <div class="intro-strip">
+    <div class="intro-strip-inner">
+      <div class="reveal"><div class="strip-num">50</div><div class="strip-label">Minutes per class</div></div>
+      <div class="reveal"><div class="strip-num">All</div><div class="strip-label">Fitness levels welcome</div></div>
+      <div class="reveal"><div class="strip-num">Zero</div><div class="strip-label">Joint impact</div></div>
+      <div class="reveal"><div class="strip-num">1</div><div class="strip-label">Machine. Total body.</div></div>
     </div>
-  </section>
-
-  <!-- FIRST TIMERS -->
-
-  <section id="firsttimers">
-    <div class="container">
-      <div class="reveal">
-        <span class="section-label">New to Lagree?</span>
-        <h2 class="section-title">For Your <em>First Class</em></h2>
-        <div class="divider"></div>
-        <p style="color: var(--warm); max-width: 560px;">Everything you need to know before you walk through the door for the first time.</p>
-      </div>
-      <div class="timers-grid">
-        <div class="timer-card reveal">
-          <div class="timer-num">01</div>
-          <div class="timer-title">Grip Socks Required</div>
-          <p class="timer-body">Grip socks are mandatory for all classes for both safety and sanitary reasons. First-time visitors receive complimentary socks — after that, you can rent, purchase, or bring your own.</p>
-        </div>
-        <div class="timer-card reveal">
-          <div class="timer-num">02</div>
-          <div class="timer-title">Arrive Early</div>
-          <p class="timer-body">Please arrive 10 minutes before your scheduled class. This allows time to sign forms, receive your intro to the Miniformer Pro. We have a zero-minute late policy for new clients — if you miss the machine demo, we cannot let you join for safety reasons.</p>
-        </div>
-        <div class="timer-card reveal">
-          <div class="timer-num">03</div>
-          <div class="timer-title">Listen & Have Fun</div>
-          <p class="timer-body">Lagree is about quick transitions between blocks to keep intensity high. Take breaks and hydrate when needed — you know your body best. We're up north for a good time. Leave the seriousness at the door!</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SCHEDULE -->
-
-  <section id="scheduling">
-    <div class="container">
-      <div class="reveal">
-        <span class="section-label">Booking</span>
-        <h2 class="section-title">Book a <em>Class</em></h2>
-        <div class="divider"></div>
-        <p style="color: var(--warm); max-width: 560px;">Class credits will be available to purchase April 2026. Drop-ins are not accommodated — waivers must be signed before class.</p>
-      </div>
-      <div class="schedule-inner reveal">
-        <div class="schedule-placeholder" id="wala-booking-widget">
-          <!-- WALA BOOKING WIDGET GOES HERE -->
-          <div class="placeholder-icon">✦</div>
-          <p>Booking opens April 2026</p>
-          <p style="margin-top: 0.5rem; font-size: 0.78rem;">The class schedule will appear here.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-
-  <section id="faq">
-    <div class="container">
-      <div class="reveal">
-        <span class="section-label">Questions</span>
-        <h2 class="section-title">We've Got <em>Answers</em></h2>
-        <div class="divider"></div>
-      </div>
-      <div class="faq-list reveal">
-
-```
-    <div class="faq-item">
-      <button class="faq-question">
-        Are classes suitable for beginners?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Yes, our classes are designed for all levels of fitness, and our instructors are trained to offer modifications or progressions to meet you where you are. This is a space where everybody is welcome.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question">
-        What time should I arrive for my first class?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Please arrive at least 10 minutes before class to select your machine, use the washroom, and get ready. We always give a demo of the machine 5 minutes before class begins. If you have not taken a class at Lagree by the Lake before and miss the demo, we cannot let you stay for safety reasons.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question">
-        How do I sign up for a class?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>To book a class, you will need an account and a valid credit balance. Drop-ins will not be accommodated, as waivers must be signed before class. Booking opens April 2026.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question">
-        Is this Pilates?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>No! While Lagree uses a machine with springs (similar to Reformer Pilates), the method incorporates strength training moves and body-building principles. We focus on slow, controlled movements and progressive load to build strength. If you like Pilates, you're going to love Lagree.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question">
-        What is your cancellation policy?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Our cancellation window is 12 hours before class to retain your credit. Please use your online account to cancel or reschedule. This window ensures that anyone on the waitlist has the opportunity to join. If you cancel after 12 hours, your class credit will be deducted.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question">
-        Where are you located?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>We are located at 2505 Windermere Rd, Windermere, ON. Parking is available in front of the building and along Windermere Road.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question">
-        What if I arrive late?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>If you have not taken a class at Lagree by the Lake before, you will not be permitted in class. If you have taken a class before, you will receive a 5-minute grace period. The studio door will be closed after the 5-minute mark — for your safety and to minimize disruptions. We understand life happens and will re-credit your account as a one-time offer.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question">
-        Can I do this pregnant?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Yes! We offer modifications for pregnancy and post-pregnancy. Please consult your doctor to ensure you are cleared for exercise before taking our classes.</p>
-      </div>
-    </div>
-
   </div>
-</div>
-```
-
-  </section>
-
-  <!-- PRICING -->
-
-  <section id="pricing">
-    <div class="container">
-      <div class="reveal">
-        <span class="section-label">Invest in yourself</span>
-        <h2 class="section-title">Lagree by the Lake <em>Pricing</em></h2>
-        <div class="divider"></div>
-        <p style="color: var(--warm); max-width: 600px; margin-bottom: 1.5rem;">From a single drop-in to class packs, our packages are perfect for those looking to shake, sweat, and smile this cottage season. Spots are limited — book in advance.</p>
-        <div class="pricing-notice">✦ Credits available to purchase April 2026</div>
+  <div class="home-about">
+    <div class="home-about-grid">
+      <div class="home-about-images reveal">
+        <img class="site-img" src="https://lagreebythelakestudio.com/wp-content/uploads/2025/07/IMG_1566-819x1024.jpg" alt="Lagree class" style="height:340px;" />
+        <img class="site-img" src="https://lagreebythelakestudio.com/wp-content/uploads/2025/07/IMG_2923-scaled-e1753814266788-840x1024.jpg" alt="Miniformer Pro" style="height:200px;" />
+        <img class="site-img" src="https://lagreebythelakestudio.com/wp-content/uploads/2025/07/setty_071-836x1024.jpg" alt="Studio Muskoka" style="height:200px;" />
       </div>
-      <div class="pricing-grid reveal">
-
-```
-    <div class="pricing-card">
-      <div class="pricing-name">Single Drop-In</div>
-      <div class="pricing-price"><span>$</span>40</div>
-      <div class="pricing-expiry">Expires after 1 month</div>
-      <div class="pricing-divider"></div>
-      <span class="pricing-coming">Coming Soon</span>
+      <div class="home-about-text reveal">
+        <span class="section-label">The Method</span>
+        <h2 class="section-title">It's not Pilates…<br>it's <em>Lagree</em></h2>
+        <div class="divider"></div>
+        <p>Lagree by the Lake is a 50-minute full-body workout that focuses on muscular endurance, strength, and flexibility. Tough on muscles, gentle on joints.</p>
+        <p>Imagine the best parts of strength training, cardio, and Pilates combined in one workout. That's the Lagree Method — conducted on the Miniformer Pro.</p>
+        <p style="color:var(--cream);font-style:italic;font-family:'Cormorant Garamond',serif;font-size:1.1rem;">Prepare to shake, sweat, and feel the burn the following day.</p>
+        <div class="home-about-links">
+          <a href="about.html" class="btn-primary">Learn More</a>
+          <a href="first-timers.html" class="btn-outline">First Timers Guide</a>
+        </div>
+      </div>
     </div>
-
-    <div class="pricing-card featured">
-      <div class="pricing-name">Intro 3-Class Pack</div>
-      <div class="pricing-price"><span>$</span>116</div>
-      <div class="pricing-expiry">Expires after 2 months</div>
-      <div class="pricing-divider"></div>
-      <span class="pricing-coming">Coming Soon</span>
-    </div>
-
-    <div class="pricing-card">
-      <div class="pricing-name">5-Class Pack</div>
-      <div class="pricing-price"><span>$</span>180</div>
-      <div class="pricing-expiry">Expires after 3 months</div>
-      <div class="pricing-divider"></div>
-      <span class="pricing-coming">Coming Soon</span>
-    </div>
-
   </div>
-</div>
-```
-
-  </section>
-
-  <!-- CONTACT -->
-
-  <section id="contactus">
+  <div class="quick-links">
     <div class="container">
-      <div class="reveal">
-        <span class="section-label">Get in Touch</span>
-        <h2 class="section-title">Contact <em>Us</em></h2>
-        <div class="divider"></div>
-      </div>
-      <div class="contact-grid">
-        <div class="reveal">
-          <div class="contact-info-item">
-            <div class="contact-info-icon">📍</div>
-            <div class="contact-info-text">
-              <strong>Location</strong>
-              <span>2505 Windermere Road<br>Windermere, ON P0B 0A2</span>
-            </div>
-          </div>
-          <div class="contact-info-item">
-            <div class="contact-info-icon">📞</div>
-            <div class="contact-info-text">
-              <strong>Phone</strong>
-              <a href="tel:6479237644">647.923.7644</a>
-            </div>
-          </div>
-          <div class="contact-info-item">
-            <div class="contact-info-icon">✉</div>
-            <div class="contact-info-text">
-              <strong>Email</strong>
-              <a href="mailto:info@lagreebythelake.com">info@lagreebythelake.com</a>
-            </div>
-          </div>
-          <div class="contact-info-item">
-            <div class="contact-info-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="14">
-                <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
-              </svg>
-            </div>
-            <div class="contact-info-text">
-              <strong>Instagram</strong>
-              <a href="https://www.instagram.com/lagreebythelake_/" target="_blank">@lagreebythelake_</a>
-            </div>
-          </div>
-        </div>
-        <div class="reveal">
-          <form class="contact-form" onsubmit="handleSubmit(event)">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" required placeholder="Your name" />
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required placeholder="your@email.com" />
-            </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="5" required placeholder="How can we help?"></textarea>
-            </div>
-            <button type="submit" class="form-submit" id="submitBtn">Send Message</button>
-          </form>
-        </div>
-      </div>
+      <span class="section-label reveal">Everything you need</span>
+      <h2 class="section-title reveal">Get started at <em>Lagree by the Lake</em></h2>
     </div>
-  </section>
-
-  <!-- FOOTER -->
-
+    <div class="quick-links-grid">
+      <a href="schedule.html" class="quick-card reveal">
+        <div class="quick-card-label">Booking</div>
+        <div class="quick-card-title">Book a Class</div>
+        <p class="quick-card-body">Reserve your spot on the Miniformer Pro. Classes open April 2026 — spots are limited.</p>
+        <div class="quick-card-arrow">View Schedule →</div>
+      </a>
+      <a href="pricing.html" class="quick-card reveal">
+        <div class="quick-card-label">Invest in yourself</div>
+        <div class="quick-card-title">Pricing</div>
+        <p class="quick-card-body">From single drop-ins to class packs — options for every cottage season commitment.</p>
+        <div class="quick-card-arrow">See Pricing →</div>
+      </a>
+      <a href="first-timers.html" class="quick-card reveal">
+        <div class="quick-card-label">New to Lagree?</div>
+        <div class="quick-card-title">First Timers</div>
+        <p class="quick-card-body">Everything you need to know before your first class — socks, timing, what to expect.</p>
+        <div class="quick-card-arrow">Read the Guide →</div>
+      </a>
+    </div>
+  </div>
   <footer>
     <div class="footer-inner">
-      <a class="footer-logo" href="#home">Lagree <span>by the Lake</span></a>
-      <ul class="footer-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#scheduling">Schedule</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#contactus">Contact</a></li>
-        <li><a href="/privacy">Privacy</a></li>
-      </ul>
-      <p class="footer-copy">© 2026 Lagree by the Lake. Windermere, Muskoka, Ontario.</p>
+      <div class="footer-logo-wrap">
+        <img src="https://lagreebythelakestudio.com/wp-content/uploads/2025/07/Logo-V3.png" alt="Lagree by the Lake" />
+        <p class="footer-tagline">Muskoka's only Lagree fitness studio. Where high-intensity fitness meets country vibes.</p>
+      </div>
+      <nav class="footer-nav">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="first-timers.html">First Timers</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <span>2505 Windermere Road</span>
+        <span>Windermere, ON P0B 0A2</span>
+        <a href="tel:6479237644">647.923.7644</a>
+        <a href="mailto:info@lagreebythelake.com">info@lagreebythelake.com</a>
+        <a href="https://www.instagram.com/lagreebythelake_/" target="_blank">@lagreebythelake_</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Lagree by the Lake. Windermere, Muskoka, Ontario.</p>
+      <a href="privacy.html">Privacy Policy</a>
     </div>
   </footer>
-
-  <script>
-    // ── Nav scroll effect
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 40);
-    });
-
-    // ── Mobile nav toggle
-    const navToggle = document.getElementById('navToggle');
-    const navLinks  = document.getElementById('navLinks');
-    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
-    navLinks.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => navLinks.classList.remove('open'));
-    });
-
-    // ── Scroll reveal
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => entry.target.classList.add('visible'), i * 80);
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    reveals.forEach(el => observer.observe(el));
-
-    // ── FAQ accordion
-    document.querySelectorAll('.faq-question').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const item = btn.closest('.faq-item');
-        const isOpen = item.classList.contains('open');
-        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-        if (!isOpen) item.classList.add('open');
-      });
-    });
-
-    // ── Contact form
-    function handleSubmit(e) {
-      e.preventDefault();
-      const btn = document.getElementById('submitBtn');
-      btn.textContent = 'Sent ✓';
-      btn.style.background = 'var(--gold)';
-      setTimeout(() => {
-        btn.textContent = 'Send Message';
-        btn.style.background = '';
-        e.target.reset();
-      }, 3000);
-    }
-  </script>
-
+  <script src="js/main.js"></script>
 </body>
 </html>

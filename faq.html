@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ — Lagree by the Lake Muskoka</title>
+  <meta name="description" content="Frequently asked questions about Lagree by the Lake. Is Lagree like Pilates? What do I wear? How do I book? What is the cancellation policy? Find answers here." />
+  <link rel="canonical" href="https://lagreebythelake.com/faq.html" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .faq-section { background: var(--deep); }
+    .faq-list { margin-top: 3rem; }
+    .faq-item { border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .faq-question {
+      width: 100%; background: none; border: none;
+      color: var(--cream); font-family: 'DM Sans', sans-serif;
+      font-size: 0.97rem; font-weight: 400; text-align: left;
+      padding: 1.4rem 0; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+      transition: color 0.2s;
+    }
+    .faq-question:hover { color: var(--teal); }
+    .faq-icon {
+      width: 22px; height: 22px; flex-shrink: 0;
+      border: 1px solid rgba(109,191,176,0.35);
+      border-radius: 50%; display: flex; align-items: center;
+      justify-content: center; font-size: 1rem; color: var(--teal);
+      transition: transform 0.3s;
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+    .faq-item.open .faq-answer { max-height: 400px; }
+    .faq-answer p { color: var(--warm); font-size: 0.9rem; line-height: 1.85; padding-bottom: 1.4rem; max-width: 700px; }
+
+    .faq-category { margin-bottom: 0.5rem; padding-top: 3rem; }
+    .faq-category-label { font-size: 0.68rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--teal); display: block; margin-bottom: 0.5rem; }
+    .faq-category-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 300; color: var(--white); }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="nav-logo" href="index.html">
+      <img src="https://lagreebythelakestudio.com/wp-content/uploads/2025/07/Logo-V3.png" alt="Lagree by the Lake" />
+      <span class="nav-logo-text">Lagree <span>by the Lake</span></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="about.html">About</a></li>
+      <li><a href="first-timers.html">First Timers</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="faq.html" class="active">FAQ</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="schedule.html" class="nav-book">Book</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-hero-content">
+      <span class="eyebrow">Questions?</span>
+      <h1>We've Got <em>Answers</em></h1>
+      <p>Everything you want to know about Lagree by the Lake.</p>
+    </div>
+  </div>
+
+  <section class="faq-section">
+    <div class="container">
+
+      <div class="reveal">
+        <div class="faq-category">
+          <span class="faq-category-label">The Basics</span>
+          <div class="faq-category-title">About the Method</div>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question">Is this Pilates? <span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>No! Although it is a common misconception. While Lagree uses a machine with springs (similar to Reformer Pilates), the method incorporates strength training moves and body-building principles. We focus on slow, controlled movements and progressive load to build strength. Trust us — if you like Pilates, you're going to love Lagree.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Are classes suitable for beginners? <span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>Yes, our classes are designed for all levels of fitness, and our instructors are trained to offer modifications or progressions to meet you where you are. This is a space where everybody is welcome.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Can I do this pregnant? <span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>Yes! We offer modifications for pregnancy and post-pregnancy. Please consult your doctor to ensure you are cleared for exercise before taking our classes.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="faq-category">
+          <span class="faq-category-label">Before Class</span>
+          <div class="faq-category-title">Arrival &amp; Preparation</div>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question">What time should I arrive for my first class? <span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>Please arrive at least 10 minutes before class to allow time to select your machine, use the washroom, and get ready. We always give a demo of the machine and the leg block 5 minutes before class begins. If you have not taken a class at Lagree by the Lake before and miss the demo, we cannot let you stay for safety reasons.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Do I need grip socks? <span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>You sure do! Grip socks are required for all classes, with no exceptions. This is for sanitary and safety reasons. We offer complimentary socks to first-time visitors, and after that, you can rent, purchase, or bring your own. If you are not wearing them, we will request that you rent or purchase them before class.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">What should I bring and wear? <span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>Wear comfortable, form-fitting workout clothes. Bring water and your grip socks. That's really all you need — we take care of everything else. The Miniformer Pro will be set up and ready for you.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="faq-category">
+          <span class="faq-category-label">Policies</span>
+          <div class="faq-category-title">Booking &amp; Cancellations</div>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question">How do I sign up for a class? <span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>To book a class, you will need an account and a valid credit balance. Drop-ins will not be accommodated, as waivers must be signed before class. Credits will be available to purchase April 2026.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">What is your cancellation policy? <span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>Our cancellation window is 12 hours before class to retain your credit. Please use your online account to cancel or reschedule classes. This window is designed to ensure that anyone who is waitlisted has the opportunity to join the class. If you cancel after 12 hours, your class credit will be deducted from your account.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">What if I arrive late? <span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>If you have not taken a class at Lagree by the Lake before, you will not be permitted in class. If you have taken a class before, you will receive a 5-minute grace period. As this is a small-business studio, we do not have a front desk to monitor late check-ins. The studio door will be closed after the 5-minute mark — for your safety and to minimize disruptions for other clients in the zone. We understand life happens and will re-credit your account as a one-time offer. Late cancellations after that will result in a credit deduction.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="faq-category">
+          <span class="faq-category-label">Location</span>
+          <div class="faq-category-title">Finding Us</div>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question">Where are you located? <span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>We are located at 2505 Windermere Rd, Windermere, ON. Parking is available in front of the building and along Windermere Road.</p></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div style="background:var(--mid);border-top:1px solid rgba(109,191,176,0.1);border-bottom:1px solid rgba(109,191,176,0.1);padding:4rem 2rem;text-align:center;">
+    <h2 class="reveal" style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;color:var(--white);margin-bottom:1rem;">Still have questions?</h2>
+    <p class="reveal" style="color:var(--warm);max-width:500px;margin:0 auto 2rem;font-size:0.95rem;">We'd love to hear from you. Reach out anytime.</p>
+    <div class="reveal" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="contact.html" class="btn-primary">Contact Us</a>
+      <a href="schedule.html" class="btn-outline">Book a Class</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo-wrap">
+        <img src="https://lagreebythelakestudio.com/wp-content/uploads/2025/07/Logo-V3.png" alt="Lagree by the Lake" />
+        <p class="footer-tagline">Muskoka's only Lagree fitness studio.</p>
+      </div>
+      <nav class="footer-nav">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="first-timers.html">First Timers</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <span>2505 Windermere Road</span>
+        <span>Windermere, ON P0B 0A2</span>
+        <a href="tel:6479237644">647.923.7644</a>
+        <a href="mailto:info@lagreebythelake.com">info@lagreebythelake.com</a>
+        <a href="https://www.instagram.com/lagreebythelake_/" target="_blank">@lagreebythelake_</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Lagree by the Lake. Windermere, Muskoka, Ontario.</p>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+  <script>
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
+</body>
+</html>

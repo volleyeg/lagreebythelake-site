@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing — Lagree by the Lake Muskoka</title>
+  <meta name="description" content="Lagree by the Lake class pricing. Single drop-ins, intro 3-class packs, and 5-class packs for Muskoka's only Lagree fitness studio. Credits available April 2026." />
+  <link rel="canonical" href="https://lagreebythelake.com/pricing.html" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .pricing-section { background: var(--deep); }
+    .pricing-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 3rem; }
+    .pricing-card { background: var(--mid); border: 1px solid rgba(109,191,176,0.12); border-radius: 4px; padding: 2.5rem 2rem; position: relative; overflow: hidden; transition: border-color 0.3s; }
+    .pricing-card:hover { border-color: rgba(109,191,176,0.4); }
+    .pricing-card.featured { border-color: rgba(109,191,176,0.4); background: var(--panel); }
+    .pricing-card.featured::before { content: 'POPULAR'; position: absolute; top: 1.2rem; right: 1.2rem; font-size: 0.6rem; letter-spacing: 0.2em; color: var(--teal); border: 1px solid rgba(109,191,176,0.3); padding: 0.2rem 0.6rem; border-radius: 2px; }
+    .pricing-card::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(to right, var(--teal-dim), transparent); }
+    .pricing-name { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; }
+    .pricing-price { font-family: 'Cormorant Garamond', serif; font-size: 4rem; font-weight: 300; color: var(--white); line-height: 1; margin-bottom: 0.3rem; }
+    .pricing-price sup { font-size: 1.6rem; vertical-align: super; color: var(--warm); }
+    .pricing-expiry { font-size: 0.78rem; color: var(--muted); margin-bottom: 2rem; }
+    .pricing-divider { width: 100%; height: 1px; background: rgba(255,255,255,0.07); margin-bottom: 1.5rem; }
+    .pricing-coming { display: inline-block; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(201,169,110,0.25); padding: 0.4rem 0.9rem; border-radius: 2px; }
+    @media(max-width:768px){ .pricing-grid { grid-template-columns: 1fr; } }
+
+    .value-section { background: var(--forest); }
+    .value-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.5rem; margin-top: 3rem; }
+    .value-item { display: flex; gap: 1.2rem; align-items: flex-start; }
+    .value-icon { width: 36px; height: 36px; background: var(--mid); border: 1px solid rgba(109,191,176,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.9rem; color: var(--teal); }
+    .value-text strong { display: block; font-size: 0.85rem; font-weight: 500; color: var(--cream); margin-bottom: 0.3rem; }
+    .value-text p { font-size: 0.85rem; color: var(--warm); line-height: 1.7; }
+    @media(max-width:600px){ .value-grid { grid-template-columns: 1fr; } }
+
+    .img-accent { background: var(--deep); padding: 0 2rem 5rem; }
+    .img-accent img { max-width: 1100px; margin: 0 auto; display: block; border-radius: 4px; height: 400px; object-fit: cover; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="nav-logo" href="index.html">
+      <img src="https://lagreebythelakestudio.com/wp-content/uploads/2025/07/Logo-V3.png" alt="Lagree by the Lake" />
+      <span class="nav-logo-text">Lagree <span>by the Lake</span></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="about.html">About</a></li>
+      <li><a href="first-timers.html">First Timers</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="pricing.html" class="active">Pricing</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="schedule.html" class="nav-book">Book</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-hero-content">
+      <span class="eyebrow">Invest in yourself</span>
+      <h1>Lagree by the Lake <em>Pricing</em></h1>
+      <p>Perfect for those looking to shake, sweat, and smile this cottage season.</p>
+    </div>
+  </div>
+
+  <section class="pricing-section">
+    <div class="container">
+      <div class="reveal">
+        <div class="notice-bar">✦ Credits available to purchase April 2026 — spots are limited, book in advance</div>
+        <p style="color:var(--warm);max-width:620px;font-size:0.95rem;">From a single-session drop-in to 5-class packs, our packages are perfect for those looking to experience Lagree at Muskoka's only studio this cottage season.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card reveal">
+          <div class="pricing-name">Single Drop-In</div>
+          <div class="pricing-price"><sup>$</sup>40</div>
+          <div class="pricing-expiry">Expires after 1 month</div>
+          <div class="pricing-divider"></div>
+          <span class="pricing-coming">Coming Soon — April 2026</span>
+        </div>
+        <div class="pricing-card featured reveal">
+          <div class="pricing-name">Intro 3-Class Pack</div>
+          <div class="pricing-price"><sup>$</sup>116</div>
+          <div class="pricing-expiry">Expires after 2 months</div>
+          <div class="pricing-divider"></div>
+          <span class="pricing-coming">Coming Soon — April 2026</span>
+        </div>
+        <div class="pricing-card reveal">
+          <div class="pricing-name">5-Class Pack</div>
+          <div class="pricing-price"><sup>$</sup>180</div>
+          <div class="pricing-expiry">Expires after 3 months</div>
+          <div class="pricing-divider"></div>
+          <span class="pricing-coming">Coming Soon — April 2026</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="img-accent">
+    <img class="reveal" src="https://lagreebythelakestudio.com/wp-content/uploads/2025/07/zack-wang-QtlFs_eaUcg-unsplash-683x1024.jpg" alt="Lagree by the Lake Muskoka" />
+  </div>
+
+  <section class="value-section">
+    <div class="container">
+      <div class="reveal">
+        <span class="section-label">What's included</span>
+        <h2 class="section-title">Every class <em>includes</em></h2>
+        <div class="divider"></div>
+      </div>
+      <div class="value-grid">
+        <div class="value-item reveal">
+          <div class="value-icon">✦</div>
+          <div class="value-text">
+            <strong>50-Minute Full-Body Workout</strong>
+            <p>A complete session combining strength, cardio, and flexibility — no filler, all method.</p>
+          </div>
+        </div>
+        <div class="value-item reveal">
+          <div class="value-icon">✦</div>
+          <div class="value-text">
+            <strong>Expert Instruction</strong>
+            <p>Certified Lagree instructors offer modifications and progressions for every fitness level.</p>
+          </div>
+        </div>
+        <div class="value-item reveal">
+          <div class="value-icon">✦</div>
+          <div class="value-text">
+            <strong>Machine Orientation (First Visit)</strong>
+            <p>First-time clients receive a full Miniformer Pro demo before class — so you feel confident from minute one.</p>
+          </div>
+        </div>
+        <div class="value-item reveal">
+          <div class="value-icon">✦</div>
+          <div class="value-text">
+            <strong>Complimentary Socks (First Visit)</strong>
+            <p>First-time visitors receive complimentary grip socks. After that, rent, purchase, or bring your own.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div style="background:var(--mid);border-top:1px solid rgba(109,191,176,0.1);padding:4rem 2rem;text-align:center;">
+    <h2 class="reveal" style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;color:var(--white);margin-bottom:1rem;">Ready to get <em style="font-style:italic;color:var(--teal);">started?</em></h2>
+    <p class="reveal" style="color:var(--warm);max-width:480px;margin:0 auto 2rem;font-size:0.95rem;">Credits open April 2026. Have questions? We're here to help.</p>
+    <div class="reveal" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="schedule.html" class="btn-primary">Book a Class</a>
+      <a href="contact.html" class="btn-outline">Contact Us</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo-wrap">
+        <img src="https://lagreebythelakestudio.com/wp-content/uploads/2025/07/Logo-V3.png" alt="Lagree by the Lake" />
+        <p class="footer-tagline">Muskoka's only Lagree fitness studio.</p>
+      </div>
+      <nav class="footer-nav">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="first-timers.html">First Timers</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <span>2505 Windermere Road</span>
+        <span>Windermere, ON P0B 0A2</span>
+        <a href="tel:6479237644">647.923.7644</a>
+        <a href="mailto:info@lagreebythelake.com">info@lagreebythelake.com</a>
+        <a href="https://www.instagram.com/lagreebythelake_/" target="_blank">@lagreebythelake_</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Lagree by the Lake. Windermere, Muskoka, Ontario.</p>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>
