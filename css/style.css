@@ -68,15 +68,15 @@ nav {
 }
 
 .nav-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
-.nav-logo img { height: 36px; width: auto; }
+.nav-logo img { height: 44px; width: auto; }
 .nav-logo-text {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.15rem;
   font-weight: 500;
-  color: #fbf6f3;
+  color: #ffffff;
   letter-spacing: 0.04em;
 }
-.nav-logo-text span { color: var(--teal); }
+.nav-logo-text span { color: #ffffff; }
 
 .nav-links { display: flex; align-items: center; gap: 1.8rem; list-style: none; }
 .nav-links a {
