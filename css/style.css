@@ -63,8 +63,8 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(11,24,18,0.97);
-  border-bottom: 1px solid rgba(109,191,176,0.1);
+  background: var(--forest);
+  border-bottom: 1px solid rgba(146,189,167,0.15);
 }
 
 .nav-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
