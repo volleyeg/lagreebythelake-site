@@ -72,8 +72,8 @@ nav {
 .nav-logo-text {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.15rem;
-  font-weight: 400;
-  color: var(--cream);
+  font-weight: 500;
+  color: #fbf6f3;
   letter-spacing: 0.04em;
 }
 .nav-logo-text span { color: var(--teal); }
