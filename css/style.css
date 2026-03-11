@@ -67,17 +67,18 @@ nav {
   border-bottom: 1px solid rgba(146,189,167,0.15);
 }
 
-.nav-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; flex-shrink: 0; }
-.nav-logo img { height: 44px; width: auto; }
-.nav-logo-text {
+.nav-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   font-weight: 500;
   color: #ffffff;
   letter-spacing: 0.04em;
+  white-space: nowrap;
 }
-.nav-logo-text span { color: #ffffff; }
-
 .nav-links { display: flex; align-items: center; gap: 1.8rem; list-style: none; }
 .nav-links a {
   color: var(--warm);
