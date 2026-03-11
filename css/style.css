@@ -266,7 +266,7 @@ footer {
   align-items: start;
 }
 .footer-logo-wrap { display: flex; flex-direction: column; gap: 0.75rem; }
-.footer-logo-wrap img { height: 80px; width: auto; max-width: 180px; object-fit: contain; }
+.footer-logo-wrap img { height: 80px; width: 80px; object-fit: contain; }
 .footer-tagline { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
 
 .footer-nav h4 {
