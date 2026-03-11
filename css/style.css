@@ -265,8 +265,8 @@ footer {
   gap: 3rem;
   align-items: start;
 }
-.footer-logo-wrap { display: flex; flex-direction: column; gap: 0.75rem; }
-.footer-logo-wrap img { height: 80px; width: 80px; object-fit: contain; }
+.footer-logo-wrap { display: flex; flex-direction: column; gap: 0.75rem; align-items: flex-start; }
+.footer-logo-wrap img { height: 80px; width: auto; display: block; }
 .footer-tagline { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
 
 .footer-nav h4 {
