@@ -67,7 +67,7 @@ nav {
   border-bottom: 1px solid rgba(146,189,167,0.15);
 }
 
-.nav-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+.nav-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; flex-shrink: 0; }
 .nav-logo img { height: 44px; width: auto; }
 .nav-logo-text {
   font-family: 'Cormorant Garamond', serif;
