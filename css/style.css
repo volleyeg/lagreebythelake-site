@@ -155,7 +155,7 @@ nav {
   margin-bottom: 1rem;
 }
 
-.page-hero h1 em { font-style: italic; color: var(--teal); }
+.page-hero h1 em { font-style: italic; color: var(--muted); }
 
 .page-hero p {
   font-family: 'Cormorant Garamond', serif;
@@ -188,7 +188,7 @@ section { padding: 5rem 2rem; }
   margin-bottom: 1.2rem;
 }
 
-.section-title em { font-style: italic; color: var(--teal); }
+.section-title em { font-style: italic; color: var(--muted); }
 
 .divider { width: 40px; height: 1px; background: var(--teal-dim); margin-bottom: 2rem; }
 
