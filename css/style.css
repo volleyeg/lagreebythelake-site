@@ -102,7 +102,7 @@ nav {
 .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
 .nav-toggle span { width: 24px; height: 1.5px; background: var(--cream); display: block; transition: 0.3s; }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .nav-links { display: none; }
   .nav-links.open {
     display: flex;
