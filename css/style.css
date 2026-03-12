@@ -79,7 +79,7 @@ nav {
   letter-spacing: 0.04em;
   white-space: nowrap;
 }
-.nav-links { display: flex; align-items: center; gap: 1.8rem; list-style: none; }
+.nav-links { display: flex; align-items: center; gap: 1.8rem; list-style: none; flex-wrap: nowrap; }
 .nav-links a {
   color: var(--warm);
   text-decoration: none;
@@ -102,7 +102,7 @@ nav {
 .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
 .nav-toggle span { width: 24px; height: 1.5px; background: var(--cream); display: block; transition: 0.3s; }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .nav-links { display: none; }
   .nav-links.open {
     display: flex;
