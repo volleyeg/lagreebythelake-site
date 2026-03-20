@@ -8,18 +8,24 @@ $name    = strip_tags(trim($_POST['name'] ?? ''));
 $email   = filter_var(trim($_POST['email'] ?? ''), FILTER_SANITIZE_EMAIL);
 $message = strip_tags(trim($_POST['message'] ?? ''));
 
-// Validate
 if (empty($name) || empty($email) || empty($message) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
     header('Location: contact.html?status=error');
     exit;
 }
 
+// Use sendmail path directly - more reliable on GoDaddy cPanel
 $to      = 'info@lagreebythelake.com';
-$subject = "New message from $name — Lagree by the Lake";
+$subject = "New message from $name";
 $body    = "Name: $name\nEmail: $email\n\nMessage:\n$message";
-$headers = "From: noreply@lagreebythelake.com\r\nReply-To: $email\r\nX-Mailer: PHP/" . phpversion();
 
-if (mail($to, $subject, $body, $headers)) {
+$headers  = "MIME-Version: 1.0\r\n";
+$headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+$headers .= "From: info@lagreebythelake.com\r\n";
+$headers .= "Reply-To: $email\r\n";
+
+$sent = mail($to, $subject, $body, $headers, '-f info@lagreebythelake.com');
+
+if ($sent) {
     header('Location: contact.html?status=success');
 } else {
     header('Location: contact.html?status=error');
