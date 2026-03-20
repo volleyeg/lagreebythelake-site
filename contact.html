@@ -101,7 +101,7 @@
 
         <div class="reveal">
           <h2 class="section-title" style="color:#37593f;margin-bottom:1.5rem;">Say <em style="color:var(--teal);">hello</em></h2>
-          <form class="contact-form" id="contactForm">
+          <form class="contact-form" id="contactForm" action="contact-handler.php" method="POST">
             <div class="form-group">
               <label for="name">Name *</label>
               <input type="text" id="name" name="name" required placeholder="Your name" />
@@ -167,18 +167,18 @@
   </footer>
   <script src="js/main.js"></script>
   <script>
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const btn = document.getElementById('submitBtn');
-      const success = document.getElementById('formSuccess');
-      btn.textContent = 'Sending…';
-      btn.disabled = true;
-      setTimeout(() => {
-        btn.style.display = 'none';
-        success.style.display = 'block';
-        this.reset();
-      }, 1000);
-    });
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('status') === 'success') {
+      document.getElementById('formSuccess').style.display = 'block';
+      document.getElementById('submitBtn').style.display = 'none';
+    }
+    if (params.get('status') === 'error') {
+      const err = document.getElementById('formSuccess');
+      err.style.display = 'block';
+      err.style.borderColor = 'rgba(255,100,100,0.3)';
+      err.style.color = '#ff6b6b';
+      err.textContent = '✗ Something went wrong. Please email us directly at info@lagreebythelake.com';
+    }
   </script>
 </body>
 </html>
