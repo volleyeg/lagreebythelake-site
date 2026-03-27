@@ -114,6 +114,10 @@
               <label for="message">Message *</label>
               <textarea id="message" name="message" rows="6" required placeholder="How can we help?"></textarea>
             </div>
+            <!-- Honeypot - invisible to humans, bots fill this in -->
+            <div style="display:none;">
+              <input type="text" name="website" id="website" autocomplete="off" tabindex="-1" />
+            </div>
             <button type="submit" class="form-submit" id="submitBtn">Send Message</button>
             <div class="form-success" id="formSuccess">✓ Message sent! We'll be in touch soon.</div>
           </form>

@@ -13,6 +13,12 @@ if (empty($name) || empty($email) || empty($message) || !filter_var($email, FILT
     exit;
 }
 
+// Honeypot check - bots fill this in, humans don't
+if (!empty($_POST['website'])) {
+    header('Location: contact.html?status=success'); // fake success to confuse bots
+    exit;
+}
+
 // Use sendmail path directly - more reliable on GoDaddy cPanel
 $to      = 'info@lagreebythelake.com';
 $subject = "New message from $name";
