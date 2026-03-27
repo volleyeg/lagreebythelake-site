@@ -59,29 +59,63 @@
   <section class="pricing-section">
     <div class="container">
       <p style="color:#5a504d;max-width:700px;font-size:1.1rem;margin:0 auto 2rem;text-align:center;">Whether you're spending the summer at the lake or just passing through, our flexible credits make it easy to fit Lagree into your summer wellness routine.</p>
-      <div class="pricing-grid">
-        <div class="pricing-card reveal">
-          <div class="pricing-name">Single Drop-In</div>
-          <div class="pricing-price"><sup>$</sup>40</div>
-          <div class="pricing-expiry">Expires after 1 month</div>
-          <div class="pricing-divider"></div>
-          <span class="pricing-coming">Coming Soon — Spring 2026</span>
+      <!-- TOGGLE: change data-mode="widget" to data-mode="tiles" to show old pricing tiles -->
+      <div data-mode="widget">
+
+        <!-- OLD TILES (shown when data-mode="tiles") -->
+        <div class="pricing-tiles">
+          <div class="pricing-grid">
+            <div class="pricing-card reveal">
+              <div class="pricing-name">Single Drop-In</div>
+              <div class="pricing-price"><sup>$</sup>40</div>
+              <div class="pricing-expiry">Expires after 1 month</div>
+              <div class="pricing-divider"></div>
+              <span class="pricing-coming">Coming Soon — Spring 2026</span>
+            </div>
+            <div class="pricing-card featured reveal">
+              <div class="pricing-name">Intro 3-Class Pack</div>
+              <div class="pricing-price"><sup>$</sup>116</div>
+              <div class="pricing-expiry">Expires after 2 months</div>
+              <div class="pricing-divider"></div>
+              <span class="pricing-coming">Coming Soon — Spring 2026</span>
+            </div>
+            <div class="pricing-card reveal">
+              <div class="pricing-name">5-Class Pack</div>
+              <div class="pricing-price"><sup>$</sup>180</div>
+              <div class="pricing-expiry">Expires after 3 months</div>
+              <div class="pricing-divider"></div>
+              <span class="pricing-coming">Coming Soon — Spring 2026</span>
+            </div>
+          </div>
         </div>
-        <div class="pricing-card featured reveal">
-          <div class="pricing-name">Intro 3-Class Pack</div>
-          <div class="pricing-price"><sup>$</sup>116</div>
-          <div class="pricing-expiry">Expires after 2 months</div>
-          <div class="pricing-divider"></div>
-          <span class="pricing-coming">Coming Soon — Spring 2026</span>
+
+        <!-- WALLA WIDGET (shown when data-mode="widget") -->
+        <div class="pricing-walla" style="margin-top:2rem;">
+          <div class="walla-widget-root" data-walla-id="59448457-eb78-40e7-b7e3-79d9a85a0201" data-walla-page="packages"></div>
+          <script type="text/javascript">
+            ;(function (w, a, l, la, j, s) {
+              const t = a.getElementById('walla-widget-script');
+              if (t) return;
+              j = a.createElement(l);
+              j.async = 1;
+              j.src = la;
+              j.id = 'walla-widget-script';
+              s = a.getElementsByTagName(l)[0];
+              s.parentNode.insertBefore(j, s);
+            })(window, document, 'script', 'https://widget.hellowalla.com/loader/v1/walla-widget-loader.js')
+          </script>
         </div>
-        <div class="pricing-card reveal">
-          <div class="pricing-name">5-Class Pack</div>
-          <div class="pricing-price"><sup>$</sup>180</div>
-          <div class="pricing-expiry">Expires after 3 months</div>
-          <div class="pricing-divider"></div>
-          <span class="pricing-coming">Coming Soon — Spring 2026</span>
-        </div>
+
       </div>
+      <script>
+        (function() {
+          var wrap = document.querySelector('.pricing-section [data-mode]');
+          if (!wrap) return;
+          var mode = wrap.dataset.mode;
+          wrap.querySelector('.pricing-tiles').style.display = mode === 'tiles' ? 'block' : 'none';
+          wrap.querySelector('.pricing-walla').style.display = mode === 'widget' ? 'block' : 'none';
+        })();
+      </script>
     </div>
   </section>
 

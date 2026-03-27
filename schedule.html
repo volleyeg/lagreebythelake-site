@@ -60,15 +60,11 @@
 
   <section class="schedule-section">
     <div class="container">
-      <div class="schedule-widget-wrap reveal">
+      <!-- TOGGLE: change data-mode="widget" to data-mode="tiles" to show old placeholder -->
+      <div class="schedule-widget-wrap reveal" data-mode="widget">
 
-        <!-- ══════════════════════════════════════════════
-             WALA BOOKING WIDGET — REPLACE THIS SECTION
-             Paste your Wala embed code here when ready.
-             Example: <script src="...wala..."></script>
-                  or: <iframe src="...wala..."></iframe>
-        ══════════════════════════════════════════════ -->
-        <div class="schedule-placeholder" id="wala-widget">
+        <!-- OLD TILES (shown when data-mode="tiles") -->
+        <div class="schedule-placeholder schedule-tiles">
           <div class="schedule-placeholder-icon">
             <svg viewBox="0 0 80 36" fill="none" xmlns="http://www.w3.org/2000/svg" width="80" height="36">
               <path d="M4 6 Q14 1 24 6 Q34 11 44 6 Q54 1 64 6 Q74 11 80 6" stroke="#92bda7" stroke-width="2" stroke-linecap="round" fill="none"/>
@@ -79,7 +75,33 @@
           <h3>Booking Opens Spring 2026</h3>
         </div>
 
+        <!-- WALLA WIDGET (shown when data-mode="widget") -->
+        <div class="schedule-walla" style="padding:1rem;">
+          <div class="walla-widget-root" data-walla-id="59448457-eb78-40e7-b7e3-79d9a85a0201" data-walla-page="classes" data-walla-locationid="21739"></div>
+          <script type="text/javascript">
+            ;(function (w, a, l, la, j, s) {
+              const t = a.getElementById('walla-widget-script');
+              if (t) return;
+              j = a.createElement(l);
+              j.async = 1;
+              j.src = la;
+              j.id = 'walla-widget-script';
+              s = a.getElementsByTagName(l)[0];
+              s.parentNode.insertBefore(j, s);
+            })(window, document, 'script', 'https://widget.hellowalla.com/loader/v1/walla-widget-loader.js')
+          </script>
+        </div>
+
       </div>
+      <script>
+        (function() {
+          var wrap = document.querySelector('.schedule-widget-wrap[data-mode]');
+          if (!wrap) return;
+          var mode = wrap.dataset.mode;
+          wrap.querySelector('.schedule-tiles').style.display = mode === 'tiles' ? 'flex' : 'none';
+          wrap.querySelector('.schedule-walla').style.display = mode === 'widget' ? 'block' : 'none';
+        })();
+      </script>
     </div>
   </section>
 
