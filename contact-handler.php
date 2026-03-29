@@ -20,7 +20,7 @@ if (!empty($_POST['website'])) {
 }
 
 // Use sendmail path directly - more reliable on GoDaddy cPanel
-$to      = 'info@lagreebythelakestudio.com';
+$to      = 'info@lagreebythelake.com';
 $subject = "New message from $name";
 $body    = "Name: $name\nEmail: $email\n\nMessage:\n$message";
 
