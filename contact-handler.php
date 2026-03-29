@@ -34,6 +34,10 @@ $sent = mail($to, $subject, $body, $headers, '-f info@lagreebythelake.com');
 if ($sent) {
     header('Location: contact.html?status=success');
 } else {
+    // Log the error for diagnosis
+    $error = error_get_last();
+    $log = date('Y-m-d H:i:s') . " | mail() failed | to: $to | error: " . ($error ? $error['message'] : 'unknown') . "\n";
+    file_put_contents(__DIR__ . '/mail-debug.log', $log, FILE_APPEND);
     header('Location: contact.html?status=error');
 }
 exit;
