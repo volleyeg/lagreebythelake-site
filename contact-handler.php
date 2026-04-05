@@ -21,12 +21,16 @@ if (!empty($_POST['website'])) {
 
 // Use sendmail path directly - more reliable on GoDaddy cPanel
 $to      = 'info@lagreebythelakestudio.com';
-$subject = "New message from $name";
-$body    = "Name: $name\nEmail: $email\n\nMessage:\n$message";
+$subject = "Contact Form: Message from $name";
+$body    = "You have a new message from the Lagree by the Lake website contact form.\n\n";
+$body   .= "Name: $name\n";
+$body   .= "Email: $email\n\n";
+$body   .= "Message:\n$message\n\n";
+$body   .= "---\nSent from lagreebythelake.com/contact.html";
 
 $headers  = "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
-$headers .= "From: Website Form <noreply@lagreebythelake.com>\r\n";
+$headers .= "From: Lagree by the Lake <info@lagreebythelakestudio.com>\r\n";
 $headers .= "Reply-To: $name <$email>\r\n";
 $headers .= "X-Mailer: PHP/" . phpversion() . "\r\n";
 
