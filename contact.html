@@ -146,6 +146,8 @@
             <button type="submit" class="form-submit" id="submitBtn">Send Message</button>
             <div class="form-success" id="formSuccess">✓ Message sent! We'll be in touch soon.</div>
           </form>
+          <!-- DEBUG BOX — remove when form is confirmed working -->
+          <div id="debugBox" style="margin-top:1rem;padding:0.8rem 1rem;border-radius:2px;font-size:0.8rem;color:#5a504d;border:1px solid rgba(0,0,0,0.1);display:none;"></div>
         </div>
       </div>
     </div>
@@ -200,6 +202,8 @@
     if (params.get('status') === 'success') {
       document.getElementById('formSuccess').style.display = 'block';
       document.getElementById('submitBtn').style.display = 'none';
+      document.getElementById('debugBox').innerHTML = '✓ PHP ran successfully. mail() returned true. Check inbox/spam.';
+      document.getElementById('debugBox').style.background = 'rgba(109,191,176,0.1)';
     }
     if (params.get('status') === 'error') {
       const err = document.getElementById('formSuccess');
@@ -207,6 +211,11 @@
       err.style.borderColor = 'rgba(255,100,100,0.3)';
       err.style.color = '#ff6b6b';
       err.textContent = '✗ Something went wrong. Please email us directly at info@lagreebythelake.com';
+      document.getElementById('debugBox').innerHTML = '✗ PHP ran but mail() returned false. Server rejected the email.';
+      document.getElementById('debugBox').style.background = 'rgba(255,100,100,0.1)';
+    }
+    if (params.get('status') === 'honeypot') {
+      document.getElementById('debugBox').innerHTML = '⚠ Honeypot triggered — form was blocked as spam.';
     }
   </script>
 </body>
