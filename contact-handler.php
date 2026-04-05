@@ -26,8 +26,9 @@ $body    = "Name: $name\nEmail: $email\n\nMessage:\n$message";
 
 $headers  = "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
-$headers .= "From: info@lagreebythelake.com\r\n";
-$headers .= "Reply-To: $email\r\n";
+$headers .= "From: Lagree by the Lake <info@lagreebythelake.com>\r\n";
+$headers .= "Reply-To: $name <$email>\r\n";
+$headers .= "X-Mailer: PHP/" . phpversion() . "\r\n";
 
 $sent = mail($to, $subject, $body, $headers, '-f info@lagreebythelake.com');
 
