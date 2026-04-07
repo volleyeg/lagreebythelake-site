@@ -61,10 +61,13 @@
   /></noscript>
   <!-- End Meta Pixel Code -->
   <style>
+    .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .nav-toggle span { width: 24px; height: 1.5px; background: #f0ebe5; display: block; }
     @media (max-width: 1024px) {
       .nav-links { display: none !important; }
-      .nav-links.open { display: flex !important; flex-direction: column; position: fixed; top: 68px; left: 0; right: 0; background: #1e3324; padding: 2rem; gap: 1.5rem; align-items: flex-start; z-index: 99; }
+      .nav-links.open { display: flex !important; flex-direction: column; position: fixed; top: 68px; left: 0; right: 0; background: #1e3324; padding: 2rem; gap: 1.5rem; align-items: flex-start; z-index: 99; border-bottom: 1px solid rgba(146,189,167,0.15); }
       .nav-toggle { display: flex !important; }
+      .nav-book { display: none !important; }
     }
   </style>
 </head>
