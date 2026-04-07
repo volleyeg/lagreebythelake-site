@@ -7,32 +7,6 @@
   <meta name="description" content="Lagree by the Lake class pricing. Single drop-ins, intro 3-class packs, and 5-class packs for Muskoka's only Lagree fitness studio. Credits available Spring 2026." />
   <link rel="canonical" href="https://lagreebythelake.com/pricing.html" />
   <link rel="stylesheet" href="css/style-v7.css" />
-  <style>
-    .pricing-section { background: var(--white); }
-    .pricing-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 3rem; }
-    .pricing-card { background: var(--cream); border: 1px solid rgba(55,89,63,0.12); border-radius: 4px; padding: 2.5rem 2rem; position: relative; overflow: hidden; transition: border-color 0.3s; text-align: center; }
-    .pricing-card:hover { border-color: rgba(55,89,63,0.3); }
-    .pricing-card.featured { border-color: rgba(55,89,63,0.3); background: var(--cream); }
-    .pricing-card::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(to right, var(--teal-dim), transparent); }
-    .pricing-name { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: #ab9e97; margin-bottom: 1rem; }
-    .pricing-price { font-family: 'Cormorant Garamond', serif; font-size: 4rem; font-weight: 300; color: #37593f; line-height: 1; margin-bottom: 0.3rem; }
-    .pricing-price sup { font-size: 1.6rem; vertical-align: super; color: #ab9e97; }
-    .pricing-expiry { font-size: 0.78rem; color: #5a504d; margin-bottom: 2rem; }
-    .pricing-divider { width: 100%; height: 1px; background: rgba(55,89,63,0.1); margin-bottom: 1.5rem; }
-    .pricing-coming { display: inline-block; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); border: 1px solid rgba(171,158,151,0.35); padding: 0.4rem 0.9rem; border-radius: 2px; }
-    @media(max-width:768px){ .pricing-grid { grid-template-columns: 1fr; } }
-
-    .value-section { background: var(--white); }
-    .value-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.5rem; margin-top: 3rem; }
-    .value-item { display: flex; gap: 1.2rem; align-items: flex-start; }
-    .value-icon { width: 36px; height: 36px; background: var(--cream); border: 1px solid rgba(55,89,63,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.9rem; color: var(--teal); }
-    .value-text strong { display: block; font-size: 0.85rem; font-weight: 500; color: #37593f; margin-bottom: 0.3rem; }
-    .value-text p { font-size: 0.85rem; color: #5a504d; line-height: 1.7; }
-    @media(max-width:600px){ .value-grid { grid-template-columns: 1fr; } }
-
-    .img-accent { background: var(--deep); padding: 0 2rem 5rem; }
-    .img-accent img { max-width: 1100px; margin: 0 auto; display: block; border-radius: 4px; height: 400px; object-fit: cover; }
-  </style>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-705112890"></script>
   <script>
@@ -66,6 +40,18 @@
       .nav-links.open { display: flex !important; flex-direction: column; position: fixed; top: 68px; left: 0; right: 0; background: #1e3324; padding: 2rem; gap: 1.5rem; align-items: flex-start; z-index: 99; border-bottom: 1px solid rgba(146,189,167,0.15); }
       .nav-toggle { display: flex !important; }
       .nav-book { display: none !important; }
+    }
+  </style>
+  <style>
+    @media (max-width: 1024px) {
+      .nav-links { display: none !important; }
+      .nav-links.open { display: flex !important; flex-direction: column; position: fixed; top: 68px; left: 0; right: 0; background: #1e3324; padding: 2rem; gap: 1.5rem; align-items: flex-start; z-index: 99; border-bottom: 1px solid rgba(146,189,167,0.15); }
+      .nav-toggle { display: flex !important; }
+      .nav-book { display: none !important; }
+    }
+    @media (min-width: 1025px) {
+      .nav-toggle { display: none !important; }
+      .nav-links { display: flex !important; }
     }
   </style>
 </head>
