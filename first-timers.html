@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>First Timers Guide — Lagree by the Lake Muskoka</title>
   <meta name="description" content="Everything you need to know before your first Lagree class in Muskoka. Grip socks, arrival time, what to expect, and more." />
   <link rel="canonical" href="https://lagreebythelake.com/first-timers.html" />
@@ -64,19 +64,69 @@
   <!-- End Meta Pixel Code -->
 </head>
 <body>
-  <nav>
-    <a class="nav-logo" href="index.html"><img src="images/logo-nav.png" alt="lagree by the lake" style="height:38px;width:auto;display:block;" /></a>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
-    <ul class="nav-links" id="navLinks">
-      
-      <li><a href="first-timers.html" class="active">First Timers</a></li>
-      <li><a href="schedule.html">Schedule</a></li>
-      <li><a href="faq.html">FAQ</a></li>
-      <li><a href="pricing.html">Pricing</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="schedule.html" class="nav-book">Book</a></li>
+  <!-- NAV -->
+  <style>
+    #new-nav {
+      padding-top: constant(safe-area-inset-top);
+      padding-top: env(safe-area-inset-top);
+      height: calc(68px + constant(safe-area-inset-top));
+      height: calc(68px + env(safe-area-inset-top));
+    }
+    #new-nav-mobile {
+      top: calc(68px + constant(safe-area-inset-top));
+      top: calc(68px + env(safe-area-inset-top));
+    }
+  </style>
+  <div id="new-nav" style="position:fixed;top:0;left:0;right:0;z-index:101;background:#1e3324;border-bottom:1px solid rgba(146,189,167,0.2);">
+    <div style="height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;">
+      <a href="index.html" style="display:flex;align-items:center;text-decoration:none;">
+        <img src="images/logo-nav.png" alt="lagree by the lake" style="height:34px;width:auto;display:block;filter:brightness(0) invert(1);" />
+      </a>
+      <ul id="new-nav-links" style="display:flex;list-style:none;gap:1.6rem;align-items:center;margin:0;padding:0;">
+        <li><a href="first-timers.html" style="color:#c9bfb9;text-decoration:none;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;font-family:sans-serif;white-space:nowrap;">First Timers</a></li>
+        <li><a href="schedule.html"     style="color:#c9bfb9;text-decoration:none;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;font-family:sans-serif;white-space:nowrap;">Schedule</a></li>
+        <li><a href="faq.html"          style="color:#c9bfb9;text-decoration:none;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;font-family:sans-serif;white-space:nowrap;">FAQ</a></li>
+        <li><a href="pricing.html"      style="color:#c9bfb9;text-decoration:none;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;font-family:sans-serif;white-space:nowrap;">Pricing</a></li>
+        <li><a href="contact.html"      style="color:#c9bfb9;text-decoration:none;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;font-family:sans-serif;white-space:nowrap;">Contact</a></li>
+      </ul>
+      <button id="new-nav-toggle" aria-label="Menu" style="display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;">
+        <span style="width:24px;height:1.5px;background:#f0ebe5;display:block;"></span>
+        <span style="width:24px;height:1.5px;background:#f0ebe5;display:block;"></span>
+        <span style="width:24px;height:1.5px;background:#f0ebe5;display:block;"></span>
+      </button>
+    </div>
+  </div>
+  <div id="new-nav-mobile" style="display:none;position:fixed;left:0;right:0;z-index:100;background:#1e3324;border-bottom:1px solid rgba(146,189,167,0.2);padding:1.5rem;">
+    <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1.2rem;">
+      <li><a href="first-timers.html" style="color:#c9bfb9;text-decoration:none;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;font-family:sans-serif;">First Timers</a></li>
+      <li><a href="schedule.html"     style="color:#c9bfb9;text-decoration:none;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;font-family:sans-serif;">Schedule</a></li>
+      <li><a href="faq.html"          style="color:#c9bfb9;text-decoration:none;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;font-family:sans-serif;">FAQ</a></li>
+      <li><a href="pricing.html"      style="color:#c9bfb9;text-decoration:none;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;font-family:sans-serif;">Pricing</a></li>
+      <li><a href="contact.html"      style="color:#c9bfb9;text-decoration:none;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;font-family:sans-serif;">Contact</a></li>
     </ul>
-  </nav>
+  </div>
+  <script>
+    (function() {
+      var toggle  = document.getElementById('new-nav-toggle');
+      var links   = document.getElementById('new-nav-links');
+      var mobile  = document.getElementById('new-nav-mobile');
+      function applyLayout() {
+        if (window.innerWidth <= 768) {
+          links.style.display  = 'none';
+          toggle.style.display = 'flex';
+        } else {
+          links.style.display  = 'flex';
+          toggle.style.display = 'none';
+          mobile.style.display = 'none';
+        }
+      }
+      applyLayout();
+      window.addEventListener('resize', applyLayout);
+      toggle.addEventListener('click', function() {
+        mobile.style.display = mobile.style.display === 'none' ? 'block' : 'none';
+      });
+    })();
+  </script>
 
   <div class="page-hero">
     <div class="page-hero-content">
