@@ -57,6 +57,7 @@ body::before {
 nav {
   position: fixed;
   top: 0; left: 0; right: 0;
+  padding-top: env(safe-area-inset-top);
   z-index: 100;
   padding: 0 2rem;
   height: 68px;
