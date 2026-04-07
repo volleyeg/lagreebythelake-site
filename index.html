@@ -151,7 +151,30 @@
       <a href="privacy.html">Privacy Policy</a>
     </div>
   </footer>
-  <script src="js/main.js"></script>
+  <script>
+    if (window.innerWidth <= 1024) {
+      document.addEventListener('DOMContentLoaded', function() {
+        var toggle = document.getElementById('navToggle');
+        var links = document.getElementById('navLinks');
+        if (toggle) {
+          toggle.style.display = 'flex';
+          links.style.display = 'none';
+          toggle.addEventListener('click', function() {
+            links.style.display = links.style.display === 'none' ? 'flex' : 'none';
+            links.style.flexDirection = 'column';
+            links.style.position = 'fixed';
+            links.style.top = '68px';
+            links.style.left = '0';
+            links.style.right = '0';
+            links.style.background = '#1e3324';
+            links.style.padding = '2rem';
+            links.style.gap = '1.5rem';
+            links.style.zIndex = '99';
+          });
+        }
+      });
+    }
+  </script>
 </body>
 </html>
 <!-- v1773180413 -->
