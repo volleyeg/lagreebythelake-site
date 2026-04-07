@@ -2,11 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Class Schedule &amp; Booking — Lagree by the Lake Muskoka</title>
   <meta name="description" content="Book a Lagree class in Muskoka. View the schedule and reserve your spot on the Miniformer Pro at Lagree by the Lake. Credits available Spring 2026." />
   <link rel="canonical" href="https://lagreebythelake.com/schedule.html" />
-  <link rel="stylesheet" href="css/style-v7.css" />
+  <link rel="stylesheet" href="css/style.css?v=5" />
+  <style>
+    .schedule-section { background: var(--white); }
+    .schedule-widget-wrap {
+      background: var(--cream);
+      border: 1px solid rgba(55,89,63,0.1);
+      border-radius: 4px;
+      min-height: 500px;
+      margin-top: 2.5rem;
+      overflow: hidden;
+      position: relative;
+    }
+    /* ── WALA WIDGET WILL REPLACE THIS PLACEHOLDER ── */
+    .schedule-placeholder {
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      min-height: 500px; text-align: center; padding: 3rem;
+    }
+    .schedule-placeholder-icon { font-family: 'Cormorant Garamond', serif; font-size: 4rem; color: var(--teal); margin-bottom: 1.5rem; }
+    .schedule-placeholder h3 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: #37593f; margin-bottom: 0.8rem; }
+    .schedule-placeholder p { color: #5a504d; font-size: 0.9rem; max-width: 400px; }
+
+    .info-strip { background: var(--forest); padding: 4rem 2rem; }
+    .info-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 2rem; }
+    .info-card { background: var(--mid); border: 1px solid rgba(109,191,176,0.1); border-radius: 4px; padding: 1.8rem; }
+    .info-card h3 { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.7rem; }
+    .info-card p { font-size: 0.87rem; color: var(--warm); line-height: 1.75; }
+    @media(max-width:768px){ .info-grid { grid-template-columns: 1fr; } }
+  </style>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-705112890"></script>
   <script>
@@ -32,28 +60,6 @@
   src="https://www.facebook.com/tr?id=2838211606523418&ev=PageView&noscript=1"
   /></noscript>
   <!-- End Meta Pixel Code -->
-  <style>
-    .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
-    .nav-toggle span { width: 24px; height: 1.5px; background: #f0ebe5; display: block; }
-    @media (max-width: 1024px) {
-      .nav-links { display: none !important; }
-      .nav-links.open { display: flex !important; flex-direction: column; position: fixed; top: 68px; left: 0; right: 0; background: #1e3324; padding: 2rem; gap: 1.5rem; align-items: flex-start; z-index: 99; border-bottom: 1px solid rgba(146,189,167,0.15); }
-      .nav-toggle { display: flex !important; }
-      .nav-book { display: none !important; }
-    }
-  </style>
-  <style>
-    @media (max-width: 1024px) {
-      .nav-links { display: none !important; }
-      .nav-links.open { display: flex !important; flex-direction: column; position: fixed; top: 68px; left: 0; right: 0; background: #1e3324; padding: 2rem; gap: 1.5rem; align-items: flex-start; z-index: 99; border-bottom: 1px solid rgba(146,189,167,0.15); }
-      .nav-toggle { display: flex !important; }
-      .nav-book { display: none !important; }
-    }
-    @media (min-width: 1025px) {
-      .nav-toggle { display: none !important; }
-      .nav-links { display: flex !important; }
-    }
-  </style>
 </head>
 <body>
   <nav>

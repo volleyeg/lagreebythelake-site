@@ -2,11 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FAQ — Lagree by the Lake Muskoka</title>
   <meta name="description" content="Frequently asked questions about Lagree by the Lake. Is Lagree Pilates? What do I wear? How do I book? What is the cancellation policy? Find answers here." />
   <link rel="canonical" href="https://lagreebythelake.com/faq.html" />
-  <link rel="stylesheet" href="css/style-v7.css" />
+  <link rel="stylesheet" href="css/style.css?v=5" />
+  <style>
+    .faq-section { background: var(--white); }
+    .faq-list { margin-top: 0.75rem; }
+    .faq-item { border-bottom: 1px solid rgba(55,89,63,0.12); }
+    .faq-question {
+      width: 100%; background: none; border: none;
+      color: #37593f; font-family: 'DM Sans', sans-serif;
+      font-size: 0.97rem; font-weight: 400; text-align: left;
+      padding: 1.4rem 0; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+      transition: color 0.2s;
+    }
+    .faq-question:hover { color: var(--teal); }
+    .faq-icon {
+      width: 22px; height: 22px; flex-shrink: 0;
+      border: 1px solid rgba(55,89,63,0.25);
+      border-radius: 50%; display: flex; align-items: center;
+      justify-content: center; font-size: 1rem; color: var(--teal);
+      transition: transform 0.3s;
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+    .faq-item.open .faq-answer { max-height: 400px; }
+    .faq-answer p { color: #5a504d; font-size: 0.9rem; line-height: 1.85; padding-bottom: 1.4rem; max-width: 700px; }
+
+    .faq-category { margin-bottom: 0.25rem; padding-top: 2rem; }
+    .faq-category-label { font-size: 0.68rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--teal); display: block; margin-bottom: 0.5rem; }
+    .faq-category-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 300; color: #37593f; }
+  </style>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-705112890"></script>
   <script>
@@ -32,28 +61,6 @@
   src="https://www.facebook.com/tr?id=2838211606523418&ev=PageView&noscript=1"
   /></noscript>
   <!-- End Meta Pixel Code -->
-  <style>
-    .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
-    .nav-toggle span { width: 24px; height: 1.5px; background: #f0ebe5; display: block; }
-    @media (max-width: 1024px) {
-      .nav-links { display: none !important; }
-      .nav-links.open { display: flex !important; flex-direction: column; position: fixed; top: 68px; left: 0; right: 0; background: #1e3324; padding: 2rem; gap: 1.5rem; align-items: flex-start; z-index: 99; border-bottom: 1px solid rgba(146,189,167,0.15); }
-      .nav-toggle { display: flex !important; }
-      .nav-book { display: none !important; }
-    }
-  </style>
-  <style>
-    @media (max-width: 1024px) {
-      .nav-links { display: none !important; }
-      .nav-links.open { display: flex !important; flex-direction: column; position: fixed; top: 68px; left: 0; right: 0; background: #1e3324; padding: 2rem; gap: 1.5rem; align-items: flex-start; z-index: 99; border-bottom: 1px solid rgba(146,189,167,0.15); }
-      .nav-toggle { display: flex !important; }
-      .nav-book { display: none !important; }
-    }
-    @media (min-width: 1025px) {
-      .nav-toggle { display: none !important; }
-      .nav-links { display: flex !important; }
-    }
-  </style>
 </head>
 <body>
   <nav>
